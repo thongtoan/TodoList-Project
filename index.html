@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./img/themify-icons/themify-icons.css">
+</head>
+<body>
+<!-- Bố cục   -->
+<div class="container">
+    <div class="toDoApp">
+        <h1>To-Do List <img src="./img/icon.png"></h1>
+        <div class="row">
+            <input type="text" id="inputBox" placeholder="Add your text">
+            <!-- Các element duy nhất ta nên đặt id để sử dụng cũng như lấy element -->
+            <button class="addButton" onclick="addTask()">Add</button>
+        </div>
+        <ul id="taskList"> 
+            <!-- Dùng id thay vì class ở đây để dễ lấy giá trị với getElementById -->
+            <!-- <li class="checked">Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li> -->
+        </ul>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

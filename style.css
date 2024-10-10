@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+/* set thuộc tính với biến * universal selector */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(90deg, darkblue, #4B0082);
+    /* 0 180deg màu chuyển từ dưới lên trên và ngược lại
+     90deg từ phải sang trái  */
+    padding: 10px;
+}
+.toDoApp {
+    /* width: 100%; */
+    max-width: 540px;
+    margin: 100px auto;
+    /* margin top = bottom = 100 left và right auto giúp căn giữa */
+    padding: 40px 30px 70px;
+    /* padding làm dày phần box cho top left-right bottom */
+    border-radius: 10px;
+    background-color: #fff;
+    /* display: flex; Ở đây*/
+}
+.toDoApp h1 {
+    color: #002765;
+    display: flex;
+    /* flex ở đây với .toDoApp là flex container
+    h1 .row #taskLish là flex items */
+    align-items: center;
+}
+.toDoApp h1 img {
+    width: 32px;
+    /* h1 ở đây có font-size = 32px nên ta set img cùng kích thước */
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    /* .row flex container
+        #inputBox / .addButton : flex items */
+    align-items: center;
+    justify-content: space-between;
+    /* Cho 2 flex item là inputBox và addButton tách ra */
+    background-color: #edeef0;
+    border-radius: 30px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.row #inputBox {
+    flex: 1;
+    /* Đề lấy chiều dài cho phần inputBox = .row - button */
+    border: none;
+    outline: none;
+    /* outline */
+    background: transparent;
+    /* transparent: trong suốt, để phần khung background của thẻ input ẩn đi */
+    padding: 10px;
+    font-size: 14px;
+    /* font-weight: 14px; */
+}
+
+.row .addButton {
+    border: none;
+    outline: none;
+    padding: 14px 30px;
+    background-color: #ff5945;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 16px;
+    padding: 12px 8px 12px 50px;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before {
+/* pseudo-element: thường được dùng để thêm hoặc chèn icon, symbols với element mà không cần tạo thẻ html 
+ở đây dùng để chèn icon uncheck vào vị trí đứng trước ul li. */
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(img/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+    /* gạch ngang */
+}
+ul li.checked::before {
+    background-image: url(img/checked.png);
+}
+
+ul li span {
+    position: absolute;
+    /* position ở đây phụ thuộc vào tag ul li (relative) */
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    /* phần khi bôi đen text */
+    text-align: center;
+    border-radius: 50%;
+}
+ul li span:hover {
+    background-color: #edeef0;
+}
